@@ -1,0 +1,247 @@
+/* ============================================================
+   CALCULADORA TRABALHISTA — CSS/COMPONENTS.CSS
+   Componentes visuais específicos: alerta de pendências, grid de
+   resumo, caixa de total, memória de cálculo.
+   ============================================================ */
+
+
+/* ---------- Alerta de pontos de atenção ---------- */
+
+.tb-pendencias {
+    background: var(--tb-alerta-bg);
+    border: 1px solid var(--tb-alerta-borda);
+    border-left: 4px solid var(--tb-alerta-borda);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 28px;
+}
+
+.tb-pendencias h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--tb-escuro);
+    margin: 0 0 .6em;
+}
+
+.tb-pendencias ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.tb-pendencias li {
+    font-size: .86rem;
+    color: var(--tb-cinza-700);
+    margin-bottom: .4em;
+}
+
+
+/* ---------- Resumo da rescisão ---------- */
+
+.tb-result h2 {
+    font-family: var(--font-display);
+    color: var(--tb-escuro);
+    font-size: 1.3rem;
+    margin-bottom: 1em;
+}
+
+.tb-resumo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.tb-resumo-item {
+    background: var(--tb-cinza-50);
+    border: 1px solid var(--tb-cinza-100);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tb-resumo-item.nao-aplicavel {
+    opacity: .55;
+}
+
+.tb-resumo-label {
+    font-family: var(--font-ui);
+    font-size: .74rem;
+    color: var(--tb-cinza-700);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.tb-resumo-valor {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--tb-escuro);
+}
+
+.tb-resumo-obs {
+    font-size: .74rem;
+    color: var(--tb-cinza-400);
+}
+
+
+/* ---------- Caixa de total ---------- */
+
+.tb-total-box {
+    background: var(--tb-escuro);
+    border-radius: 12px;
+    padding: 26px 30px;
+    color: var(--tb-branco);
+    margin-bottom: 28px;
+}
+
+.tb-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    font-family: var(--font-ui);
+}
+
+.tb-total-row-sub {
+    color: var(--tb-cinza-200);
+    font-size: .92rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.tb-total-final {
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, .18);
+    font-size: 1.15rem;
+}
+
+.tb-total-final strong {
+    color: var(--gold, #B8935B);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+}
+
+.tb-total-note {
+    font-size: .74rem;
+    color: var(--tb-cinza-200);
+    margin: 10px 0 0;
+}
+
+
+/* ---------- Memória de cálculo ---------- */
+
+.tb-memoria {
+    border: 1px solid var(--tb-cinza-100);
+    border-radius: 10px;
+    margin-bottom: 24px;
+    background: var(--tb-branco);
+}
+
+.tb-memoria summary {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    color: var(--tb-escuro);
+    padding: 16px 20px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.tb-memoria summary::-webkit-details-marker {
+    display: none;
+}
+
+.tb-memoria summary::before {
+    content: '▸ ';
+    color: var(--gold, #B8935B);
+}
+
+.tb-memoria[open] summary::before {
+    content: '▾ ';
+}
+
+.tb-memoria-verba {
+    padding: 16px 20px;
+    border-top: 1px solid var(--tb-cinza-100);
+}
+
+.tb-memoria-verba h4 {
+    font-family: var(--font-display);
+    font-size: .95rem;
+    color: var(--tb-escuro);
+    margin: 0 0 .5em;
+}
+
+.tb-memoria-verba p {
+    font-size: .85rem;
+    color: var(--tb-cinza-700);
+    margin: .2em 0;
+}
+
+.tb-memoria-formula {
+    font-family: 'Courier New', monospace;
+    background: var(--tb-cinza-50);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: .5em 0;
+    font-size: .84rem;
+    color: var(--tb-escuro);
+}
+
+.tb-memoria-resultado {
+    font-weight: 700;
+    color: var(--tb-escuro);
+}
+
+.tb-memoria-naoaplicavel {
+    color: var(--tb-cinza-400);
+    font-style: italic;
+}
+
+
+/* ---------- Captação de lead (opcional) ---------- */
+
+.tb-lead {
+    background: var(--tb-cinza-50);
+    border: 1px solid var(--tb-cinza-100);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+}
+
+.tb-lead h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--tb-escuro);
+    margin: 0 0 .3em;
+}
+
+.tb-lead .tb-hint {
+    margin-bottom: 1.2em;
+}
+
+.tb-opt {
+    font-weight: 400;
+    color: var(--tb-cinza-400);
+    font-size: .78rem;
+}
+
+
+/* ---------- Disclaimer e ações finais ---------- */
+
+.tb-disclaimer {
+    font-size: .8rem;
+    color: var(--tb-cinza-700);
+    background: var(--tb-cinza-50);
+    border-left: 3px solid var(--gold, #B8935B);
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-bottom: 26px;
+}
+
+.tb-result-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}

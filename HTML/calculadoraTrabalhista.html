@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ============ SEO ============ -->
+    <title>Calculadora Trabalhista Online | Casa Contábil</title>
+    <meta name="description" content="Simule gratuitamente suas verbas rescisórias: saldo de salário, aviso-prévio, férias, 13º e FGTS, com memória de cálculo detalhada. Ferramenta da Casa Contábil.">
+    <meta name="keywords" content="calculadora trabalhista, calculadora de rescisão, simulador rescisão trabalhista, aviso prévio, férias proporcionais, 13º proporcional, FGTS, contador em Ji-Paraná">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devdrs.github.io/casacontabil/calculadora-trabalhista.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Casa Contábil">
+    <meta property="og:title" content="Calculadora Trabalhista Online | Casa Contábil">
+    <meta property="og:description" content="Simule suas verbas rescisórias de forma clara e organizada, com memória de cálculo detalhada.">
+    <meta property="og:url" content="https://devdrs.github.io/casacontabil/calculadora-trabalhista.html">
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculadora Trabalhista Online | Casa Contábil">
+    <meta name="twitter:description" content="Simule suas verbas rescisórias com memória de cálculo detalhada.">
+
+    <!-- Fontes — idênticas ao restante do site da Casa Contábil -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS do site (header/rodapé/botões) + CSS modular da calculadora trabalhista -->
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/componentes.css">
+    <link rel="stylesheet" href="../CSS/responsive.css">
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculadora Trabalhista — Casa Contábil",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web",
+            "url": "https://devdrs.github.io/casacontabil/calculadora-trabalhista.html",
+            "description": "Simulador gratuito de verbas rescisórias trabalhistas com memória de cálculo.",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "BRL"
+            },
+            "provider": {
+                "@type": "AccountingService",
+                "name": "Casa Contábil",
+                "areaServed": "Ji-Paraná, Rondônia"
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- ============================================================
+     HEADER — idêntico ao restante do site
+     ============================================================ -->
+    <header class="site-header" id="topo">
+        <div class="header-inner">
+            <a href="../index.html" class="brand" aria-label="Casa Contábil — início">
+                <span class="brand-mark">CC</span>
+                <span class="brand-name">Casa Contábil</span>
+            </a>
+            <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+                <a href="../index.html">Início</a>
+                <a href="../index.html#servicos">Serviços</a>
+                <a href="../calculadora-simples-nacional.html">Simples Nacional</a>
+                <a href="../index.html#contato">Contato</a>
+            </nav>
+            <a class="btn btn-gold header-cta" href="https://wa.me/5569993842735?text=Ol%C3%A1!%20Quero%20falar%20com%20um%20contador%20da%20Casa%20Cont%C3%A1bil." target="_blank" rel="noopener">Fale com um Contador</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+        </div>
+    </header>
+
+    <main>
+
+        <nav class="breadcrumb" aria-label="breadcrumb">
+            <ol>
+                <li><a href="../index.html">Início</a></li>
+                <li class="crumb-sep" aria-hidden="true">›</li>
+                <li><a href="../index.html#servicos">Ferramentas</a></li>
+                <li class="crumb-sep" aria-hidden="true">›</li>
+                <li aria-current="page">Calculadora Trabalhista</li>
+            </ol>
+        </nav>
+
+        <!-- ============================================================
+     CABEÇALHO DA FERRAMENTA
+     ============================================================ -->
+        <section class="tb-hero">
+            <p class="eyebrow">— Casa Contábil</p>
+            <h1>Calculadora Trabalhista</h1>
+            <p class="tb-hero-sub">Simule suas verbas rescisórias de forma clara e organizada.</p>
+        </section>
+
+        <!-- ============================================================
+     APLICAÇÃO DA CALCULADORA
+     ============================================================ -->
+        <section class="tb-app" id="calculadora-trabalhista" aria-label="Calculadora de rescisão trabalhista">
+            <div class="tb-shell">
+
+                <!-- ---------- Indicador de progresso ---------- -->
+                <ol class="tb-progress" aria-label="Etapas do cálculo">
+                    <li class="tb-progress-step is-active" data-step-indicator="1"><span class="tb-step-circle">1</span><span>Dados do Contrato</span></li>
+                    <li class="tb-progress-step" data-step-indicator="2"><span class="tb-step-circle">2</span><span>Informações Complementares</span></li>
+                    <li class="tb-progress-step" data-step-indicator="3"><span class="tb-step-circle">3</span><span>Resultado</span></li>
+                </ol>
+
+                <div class="tb-card">
+                    <form id="tbForm" novalidate>
+
+                        <!-- ================= ETAPA 1 — DADOS DO CONTRATO ================= -->
+                        <fieldset class="tb-step is-active" data-step="1">
+                            <legend><span class="eyebrow">— Etapa 1 de 3</span>Dados do Contrato</legend>
+
+                            <div class="tb-row cols-2">
+                                <div class="tb-field">
+                                    <label for="dataAdmissao">Data de admissão *</label>
+                                    <input type="date" id="dataAdmissao" name="dataAdmissao" required aria-describedby="erro-dataAdmissao">
+                                    <p class="tb-error" id="erro-dataAdmissao" role="alert"></p>
+                                </div>
+                                <div class="tb-field">
+                                    <label for="dataDesligamento">Data de desligamento *</label>
+                                    <input type="date" id="dataDesligamento" name="dataDesligamento" required aria-describedby="erro-dataDesligamento">
+                                    <p class="tb-error" id="erro-dataDesligamento" role="alert"></p>
+                                </div>
+                            </div>
+
+                            <div class="tb-row cols-2">
+                                <div class="tb-field">
+                                    <label for="salario">Salário mensal (R$) *</label>
+                                    <div class="tb-currency">
+                                        <span>R$</span>
+                                        <input type="text" id="salario" name="salario" inputmode="decimal" placeholder="0,00" required aria-describedby="erro-salario">
+                                    </div>
+                                    <p class="tb-error" id="erro-salario" role="alert"></p>
+                                </div>
+                                <div class="tb-field">
+                                    <label for="tipoDesligamento">Tipo de desligamento *</label>
+                                    <select id="tipoDesligamento" name="tipoDesligamento" required aria-describedby="erro-tipoDesligamento">
+                <option value="">Selecione</option>
+                <option value="SEM_JUSTA_CAUSA">Demissão sem justa causa</option>
+                <option value="PEDIDO_DEMISSAO">Pedido de demissão</option>
+                <option value="JUSTA_CAUSA">Demissão por justa causa</option>
+                <option value="ACORDO">Acordo entre empregado e empregador</option>
+                <option value="TERMINO_CONTRATO">Término de contrato (prazo determinado)</option>
+              </select>
+                                    <p class="tb-error" id="erro-tipoDesligamento" role="alert"></p>
+                                </div>
+                            </div>
+
+                            <p class="tb-hint" id="hintTipoDesligamento" hidden></p>
+
+                            <div class="tb-step-actions">
+                                <span></span>
+                                <button type="button" class="btn btn-dark" data-action="next">Avançar</button>
+                            </div>
+                        </fieldset>
+
+                        <!-- ================= ETAPA 2 — INFORMAÇÕES COMPLEMENTARES ================= -->
+                        <fieldset class="tb-step" data-step="2">
+                            <legend><span class="eyebrow">— Etapa 2 de 3</span>Informações Complementares</legend>
+                            <p class="tb-step-note">Os campos abaixo mudam de acordo com o tipo de desligamento selecionado — preencha apenas o que se aplica ao seu caso.</p>
+
+                            <!-- Campo: aviso cumprido (somente PEDIDO_DEMISSAO) -->
+                            <div class="tb-field tb-dynamic" data-visible-for="PEDIDO_DEMISSAO">
+                                <label for="avisoCumprido">O aviso-prévio foi cumprido (trabalhado)?</label>
+                                <select id="avisoCumprido" name="avisoCumprido">
+              <option value="sim">Sim, foi cumprido</option>
+              <option value="nao">Não foi cumprido</option>
+            </select>
+                                <p class="tb-hint">Se não cumprido, o valor de um salário é descontado do total (conforme a documentação-base).</p>
+                            </div>
+
+                            <!-- Campo: saldo FGTS (SEM_JUSTA_CAUSA e ACORDO) -->
+                            <div class="tb-field tb-dynamic" data-visible-for="SEM_JUSTA_CAUSA,ACORDO">
+                                <label for="saldoFgts">Saldo do extrato do FGTS (R$)</label>
+                                <div class="tb-currency"><span>R$</span><input type="text" id="saldoFgts" name="saldoFgts" inputmode="decimal" placeholder="0,00"></div>
+                                <p class="tb-hint">Necessário para calcular a multa do FGTS. Consulte o extrato no app FGTS ou na Caixa.</p>
+                                <p class="tb-error" id="erro-saldoFgts" role="alert"></p>
+                            </div>
+
+                            <!-- Campo: férias vencidas (todos os tipos) -->
+                            <div class="tb-row cols-2">
+                                <div class="tb-field">
+                                    <label class="tb-checkbox-row">
+                <input type="checkbox" id="possuiFeriasVencidas" name="possuiFeriasVencidas">
+                <span>Possui férias vencidas não gozadas (um período completo)?</span>
+              </label>
+                                </div>
+                                <div class="tb-field">
+                                    <label class="tb-checkbox-row">
+                <input type="checkbox" id="possuiVariaveis" name="possuiVariaveis">
+                <span>Recebeu horas extras habituais nos últimos 12 meses?</span>
+              </label>
+                                </div>
+                            </div>
+
+                            <!-- Campos de horas extras / médias / DSR -->
+                            <div class="tb-dynamic-group" id="grupoVariaveis" hidden>
+                                <div class="tb-row cols-2">
+                                    <div class="tb-field">
+                                        <label for="somaHorasExtras12m">Soma das horas extras (últimos 12 meses)</label>
+                                        <input type="text" id="somaHorasExtras12m" name="somaHorasExtras12m" inputmode="decimal" placeholder="0">
+                                        <p class="tb-error" id="erro-somaHorasExtras12m" role="alert"></p>
+                                    </div>
+                                    <div class="tb-field">
+                                        <label for="valorHoraExtraAtual">Valor atual da hora extra (R$)</label>
+                                        <div class="tb-currency"><span>R$</span><input type="text" id="valorHoraExtraAtual" name="valorHoraExtraAtual" inputmode="decimal" placeholder="0,00"></div>
+                                        <p class="tb-error" id="erro-valorHoraExtraAtual" role="alert"></p>
+                                    </div>
+                                </div>
+                                <div class="tb-row cols-2">
+                                    <div class="tb-field">
+                                        <label for="horasExtrasMesRescisao">Horas extras no mês da rescisão (valor em R$)</label>
+                                        <div class="tb-currency"><span>R$</span><input type="text" id="horasExtrasMesRescisao" name="horasExtrasMesRescisao" inputmode="decimal" placeholder="0,00"></div>
+                                        <p class="tb-error" id="erro-horasExtrasMesRescisao" role="alert"></p>
+                                    </div>
+                                    <div class="tb-field">
+                                        <label for="diasUteisMes">Dias úteis do mês da rescisão</label>
+                                        <input type="number" id="diasUteisMes" name="diasUteisMes" min="0" max="31" placeholder="0">
+                                        <p class="tb-error" id="erro-diasUteisMes" role="alert"></p>
+                                    </div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="tb-field">
+                                        <label for="domingosFeriadosMes">Domingos e feriados do mês da rescisão</label>
+                                        <input type="number" id="domingosFeriadosMes" name="domingosFeriadosMes" min="0" max="10" placeholder="0">
+                                        <p class="tb-error" id="erro-domingosFeriadosMes" role="alert"></p>
+                                    </div>
+                                </div>
+                                <p class="tb-hint">Usados para calcular a média de horas extras (que integra a base de férias e 13º) e o DSR sobre variáveis, conforme a documentação-base.</p>
+                            </div>
+
+                            <!-- Campos de IRRF (informativos — cálculo fica pendente, ver aviso) -->
+                            <div class="tb-row cols-2">
+                                <div class="tb-field">
+                                    <label for="dependentes">Número de dependentes (IRRF)</label>
+                                    <input type="number" id="dependentes" name="dependentes" min="0" placeholder="0">
+                                    <p class="tb-error" id="erro-dependentes" role="alert"></p>
+                                </div>
+                                <div class="tb-field">
+                                    <label for="adiantamentos">Adiantamentos já recebidos (R$)</label>
+                                    <div class="tb-currency"><span>R$</span><input type="text" id="adiantamentos" name="adiantamentos" inputmode="decimal" placeholder="0,00"></div>
+                                    <p class="tb-error" id="erro-adiantamentos" role="alert"></p>
+                                </div>
+                            </div>
+
+                            <div class="tb-step-actions">
+                                <button type="button" class="btn btn-outline-dark" data-action="prev">Voltar</button>
+                                <button type="button" class="btn btn-gold" data-action="calcular" id="btnCalcular">CALCULAR RESCISÃO</button>
+                            </div>
+                        </fieldset>
+
+                    </form>
+
+                    <!-- ================= ETAPA 3 — RESULTADO ================= -->
+                    <div class="tb-result" id="tbResultado" hidden>
+
+                        <div class="tb-pendencias" id="tbPendencias" hidden>
+                            <h3>⚠️ Pontos de atenção desta simulação</h3>
+                            <ul id="tbListaPendencias"></ul>
+                        </div>
+
+                        <h2>Resumo da Rescisão</h2>
+                        <div class="tb-resumo-grid" id="tbResumoGrid">
+                            <!-- preenchido via JS (ui/results.js) -->
+                        </div>
+
+                        <div class="tb-total-box">
+                            <div class="tb-total-row"><span>Total Bruto</span><strong id="tbTotalBruto">R$ 0,00</strong></div>
+                            <div class="tb-total-row tb-total-row-sub"><span>(−) Total de Descontos</span><strong id="tbTotalDescontos">R$ 0,00</strong></div>
+                            <div class="tb-total-row tb-total-final"><span>VALOR LÍQUIDO ESTIMADO*</span><strong id="tbValorLiquido">R$ 0,00</strong></div>
+                            <p class="tb-total-note">*Sem IRRF/INSS — tabelas vigentes pendentes de configuração (ver pontos de atenção acima).</p>
+                        </div>
+
+                        <!-- ========== MEMÓRIA DE CÁLCULO ========== -->
+                        <details class="tb-memoria">
+                            <summary>Ver memória de cálculo</summary>
+                            <div id="tbMemoriaConteudo">
+                                <!-- preenchido via JS (ui/memoryCalculation.js) -->
+                            </div>
+                        </details>
+
+                        <p class="tb-disclaimer">
+                            Esta calculadora possui finalidade informativa e de simulação. Os resultados podem variar conforme as características específicas do contrato de trabalho, convenções coletivas, documentos e legislação aplicável. Recomenda-se conferência profissional antes
+                            de utilizar os valores para fins oficiais.
+                        </p>
+
+                        <!-- ========== CAPTAÇÃO DE LEAD (opcional, não bloqueia o resultado) ========== -->
+                        <div class="tb-lead">
+                            <h3>Quer receber esse resultado e falar com um contador?</h3>
+                            <p class="tb-hint">Preencher seus dados é opcional — o resultado acima já é seu, com ou sem isso.</p>
+
+                            <div class="tb-row cols-2">
+                                <div class="tb-field">
+                                    <label for="leadNome">Nome</label>
+                                    <input type="text" id="leadNome" name="leadNome" placeholder="Seu nome">
+                                    <p class="tb-error" id="erro-leadNome" role="alert"></p>
+                                </div>
+                                <div class="tb-field">
+                                    <label for="leadTelefone">Telefone / WhatsApp</label>
+                                    <input type="text" id="leadTelefone" name="leadTelefone" inputmode="numeric" placeholder="(69) 99999-9999" maxlength="15">
+                                    <p class="tb-error" id="erro-leadTelefone" role="alert"></p>
+                                </div>
+                            </div>
+                            <div class="tb-field">
+                                <label for="leadEmail">E-mail <span class="tb-opt">(opcional)</span></label>
+                                <input type="email" id="leadEmail" name="leadEmail" placeholder="voce@email.com">
+                                <p class="tb-error" id="erro-leadEmail" role="alert"></p>
+                            </div>
+
+                            <label class="tb-checkbox-row">
+            <input type="checkbox" id="leadLgpd" name="leadLgpd">
+            <span>Autorizo a Casa Contábil a entrar em contato comigo com base nesses dados, de acordo com a Lei Geral de Proteção de Dados (LGPD).</span>
+          </label>
+                            <p class="tb-error" id="erro-leadLgpd" role="alert"></p>
+                        </div>
+
+                        <div class="tb-result-actions">
+                            <a class="btn btn-gold" id="btnFalarContadorResultado" href="#" target="_blank" rel="noopener">Enviar resultado por WhatsApp</a>
+                            <button type="button" class="btn btn-outline-dark" id="btnNovoCalculo">NOVO CÁLCULO</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================
+     RODAPÉ — idêntico ao restante do site
+     ============================================================ -->
+    <footer class="site-footer" id="contato">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <p class="brand-name light">Casa Contábil</p>
+                <p>CRC RO-011266/0-5<br>CNPJ: 00.000.000/0000-00</p>
+                <p>Sua contabilidade com a segurança de um lar, feita para sua empresa.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Contato</h5>
+                <p>📍 Ji-Paraná — RO</p>
+                <p>📞 (69) 99384-2735</p>
+                <p>✉️ contato@casacontabil.com.br</p>
+                <a class="footer-whatsapp" href="https://wa.me/5569993842735" target="_blank" rel="noopener">💬 WhatsApp</a>
+            </div>
+            <div class="footer-col">
+                <h5>Links rápidos</h5>
+                <a href="../index.html">Início</a>
+                <a href="../calculadora-simples-nacional.html">Calculadora Simples Nacional</a>
+                <a href="./calculadoraTrabalhista.html">Calculadora Trabalhista</a>
+                <a href="../index.html#faq">FAQ</a>
+            </div>
+            <div class="footer-col">
+                <h5>Redes sociais</h5>
+                <div class="footer-social">
+                    <a href="#" target="_blank" rel="noopener">Instagram</a>
+                    <a href="#" target="_blank" rel="noopener">Facebook</a>
+                    <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-col footer-map">
+                <h5>Localização</h5>
+                <iframe title="Mapa Casa Contábil - Ji-Paraná/RO" src="https://www.google.com/maps?q=Ji-Paran%C3%A1,RO&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="ano"></span> Casa Contábil — Todos os direitos reservados.</p>
+            <p>Desenvolvido por Diogo Reis Silva — Contador e Analista de Sistemas</p>
+        </div>
+    </footer>
+
+    <a class="whatsapp-float" href="https://wa.me/5569993842735?text=Ol%C3%A1!%20Vim%20pela%20Calculadora%20Trabalhista%20e%20quero%20falar%20com%20um%20contador." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">💬</a>
+
+    <!-- Orquestrador da calculadora trabalhista -->
+    <script type="module" src="../JAVA/app.js"></script>
+</body>
+
+</html>

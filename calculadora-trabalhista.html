@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Trabalhista | Casa Contábil</title>
+    <meta name="description" content="Calculadora Trabalhista da Casa Contábil">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/componentes.css">
+    <link rel="stylesheet" href="./CSS/responsive.css">
+</head>
+
+<body>
+    <header class="site-header" id="topo">
+        <div class="header-inner">
+            <a href="./index.html" class="brand" aria-label="Casa Contábil — início">
+                <span class="brand-mark">CC</span>
+                <span class="brand-name">Casa Contábil</span>
+            </a>
+            <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+                <a href="./index.html">Início</a>
+                <a href="./index.html#servicos">Serviços</a>
+                <a href="./calculadora-simples-nacional.html">Simples Nacional</a>
+                <a href="./index.html#contato">Contato</a>
+            </nav>
+            <a class="btn btn-gold header-cta" href="https://wa.me/5569993842735" target="_blank" rel="noopener">Fale com um Contador</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="tb-hero">
+            <p class="eyebrow">— Casa Contábil</p>
+            <h1>Calculadora Trabalhista</h1>
+            <p class="tb-hero-sub">Simule suas verbas rescisórias de forma clara e organizada.</p>
+        </section>
+
+        <section class="tb-app" id="calculadora-trabalhista" aria-label="Calculadora de rescisão trabalhista">
+            <div class="tb-shell">
+                <ol class="tb-progress" aria-label="Etapas do cálculo">
+                    <li class="tb-progress-step is-active" data-step-indicator="1"><span class="tb-step-circle">1</span><span>Dados do Contrato</span></li>
+                    <li class="tb-progress-step" data-step-indicator="2"><span class="tb-step-circle">2</span><span>Informações Complementares</span></li>
+                    <li class="tb-progress-step" data-step-indicator="3"><span class="tb-step-circle">3</span><span>Resultado</span></li>
+                </ol>
+
+                <div class="tb-card">
+                    <form id="tbForm" novalidate>
+                        <fieldset class="tb-step is-active" data-step="1">
+                            <legend><span class="eyebrow">— Etapa 1 de 3</span>Dados do Contrato</legend>
+
+                            <div class="tb-row cols-2">
+                                <div class="tb-field">
+                                    <label for="dataAdmissao">Data de admissão *</label>
+                                    <input type="date" id="dataAdmissao" name="dataAdmissao" required>
+                                    <p class="tb-error" id="erro-dataAdmissao" role="alert"></p>
+                                </div>
+                                <div class="tb-field">
+                                    <label for="dataDesligamento">Data de desligamento *</label>
+                                    <input type="date" id="dataDesligamento" name="dataDesligamento" required>
+                                    <p class="tb-error" id="erro-dataDesligamento" role="alert"></p>
+                                </div>
+                            </div>
+
+                            <div class="tb-row cols-2">
+                                <div class="tb-field">
+                                    <label for="salario">Salário mensal (R$) *</label>
+                                    <div class="tb-currency"><span>R$</span><input type="text" id="salario" name="salario" inputmode="decimal" placeholder="0,00"></div>
+                                    <p class="tb-error" id="erro-salario" role="alert"></p>
+                                </div>
+                                <div class="tb-field">
+                                    <label for="tipoDesligamento">Tipo de desligamento *</label>
+                                    <select id="tipoDesligamento" name="tipoDesligamento">
+                                        <option value="">Selecione</option>
+                                        <option value="SEM_JUSTA_CAUSA">Demissão sem justa causa</option>
+                                        <option value="PEDIDO_DEMISSAO">Pedido de demissão</option>
+                                        <option value="JUSTA_CAUSA">Demissão por justa causa</option>
+                                        <option value="ACORDO">Acordo entre empregado e empregador</option>
+                                        <option value="TERMINO_CONTRATO">Término de contrato (prazo determinado)</option>
+                                    </select>
+                                    <p class="tb-error" id="erro-tipoDesligamento" role="alert"></p>
+                                </div>
+                            </div>
+
+                            <div class="tb-step-actions">
+                                <span></span>
+                                <button type="button" class="btn btn-dark" data-action="next">Avançar</button>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="tb-step" data-step="2">
+                            <legend><span class="eyebrow">— Etapa 2 de 3</span>Informações Complementares</legend>
+
+                            <div class="tb-field tb-dynamic" data-visible-for="PEDIDO_DEMISSAO">
+                                <label for="avisoCumprido">O aviso-prévio foi cumprido?</label>
+                                <select id="avisoCumprido" name="avisoCumprido">
+                                    <option value="sim">Sim</option>
+                                    <option value="nao">Não</option>
+                                </select>
+                            </div>
+
+                            <div class="tb-field tb-dynamic" data-visible-for="SEM_JUSTA_CAUSA,ACORDO">
+                                <label for="saldoFgts">Saldo do FGTS (R$)</label>
+                                <div class="tb-currency"><span>R$</span><input type="text" id="saldoFgts" name="saldoFgts" placeholder="0,00"></div>
+                            </div>
+
+                            <div class="tb-row cols-2">
+                                <div class="tb-field">
+                                    <label class="tb-checkbox-row"><input type="checkbox" id="possuiFeriasVencidas" name="possuiFeriasVencidas"><span>Possui férias vencidas?</span></label>
+                                </div>
+                                <div class="tb-field">
+                                    <label class="tb-checkbox-row"><input type="checkbox" id="possuiVariaveis" name="possuiVariaveis"><span>Recebeu horas extras habituais?</span></label>
+                                </div>
+                            </div>
+
+                            <div class="tb-dynamic-group" id="grupoVariaveis" hidden>
+                                <div class="tb-row cols-2">
+                                    <div class="tb-field">
+                                        <label for="somaHorasExtras12m">Soma das horas extras (12 meses)</label>
+                                        <input type="text" id="somaHorasExtras12m" name="somaHorasExtras12m" placeholder="0">
+                                    </div>
+                                    <div class="tb-field">
+                                        <label for="valorHoraExtraAtual">Valor da hora extra (R$)</label>
+                                        <div class="tb-currency"><span>R$</span><input type="text" id="valorHoraExtraAtual" name="valorHoraExtraAtual" placeholder="0,00"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tb-step-actions">
+                                <button type="button" class="btn btn-outline-dark" data-action="prev">Voltar</button>
+                                <button type="button" class="btn btn-gold" data-action="calcular" id="btnCalcular">CALCULAR RESCISÃO</button>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                    <div class="tb-result" id="tbResultado" hidden>
+                        <h2>Resumo da Rescisão</h2>
+                        <div class="tb-resumo-grid" id="tbResumoGrid"></div>
+
+                        <div class="tb-total-box">
+                            <div class="tb-total-row"><span>Total Bruto</span><strong id="tbTotalBruto">R$ 0,00</strong></div>
+                            <div class="tb-total-row tb-total-row-sub"><span>(−) Total de Descontos</span><strong id="tbTotalDescontos">R$ 0,00</strong></div>
+                            <div class="tb-total-row tb-total-final"><span>VALOR LÍQUIDO ESTIMADO*</span><strong id="tbValorLiquido">R$ 0,00</strong></div>
+                        </div>
+
+                        <div class="tb-lead">
+                            <h3>Quer receber esse resultado e falar com um contador?</h3>
+                            <div class="tb-row cols-2">
+                                <div class="tb-field">
+                                    <label for="leadNome">Nome</label>
+                                    <input type="text" id="leadNome" name="leadNome" placeholder="Seu nome">
+                                </div>
+                                <div class="tb-field">
+                                    <label for="leadTelefone">Telefone / WhatsApp</label>
+                                    <input type="text" id="leadTelefone" name="leadTelefone" placeholder="(69) 99999-9999">
+                                </div>
+                            </div>
+                            <div class="tb-field">
+                                <label for="leadEmail">E-mail</label>
+                                <input type="email" id="leadEmail" name="leadEmail" placeholder="voce@email.com">
+                            </div>
+                        </div>
+
+                        <div class="tb-result-actions">
+                            <a class="btn btn-gold" id="btnFalarContadorResultado" href="#" target="_blank" rel="noopener">Enviar resultado por WhatsApp</a>
+                            <button type="button" class="btn btn-outline-dark" id="btnNovoCalculo">NOVO CÁLCULO</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contato">
+        <div class="footer-bottom">
+            <p>&copy; <span id="ano"></span> Casa Contábil — Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="./JAVA/app.js"></script>
+</body>
+
+</html>

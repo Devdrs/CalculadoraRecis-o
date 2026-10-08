@@ -1,0 +1,75 @@
+/* ============================================================
+   CALCULADORA TRABALHISTA — CSS/RESPONSIVE.CSS
+   Mobile-first por cima: breakpoints em 980px e 640px, iguais
+   aos usados no restante do site da Casa Contábil para manter
+   consistência de comportamento entre as páginas.
+   ============================================================ */
+
+@media (max-width:980px) {
+    .tb-resumo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width:640px) {
+    .tb-hero {
+        padding: 28px 20px 6px;
+    }
+    .tb-card {
+        padding: 24px 18px;
+    }
+    .tb-row.cols-2 {
+        grid-template-columns: 1fr;
+    }
+    .tb-progress {
+        gap: 4px;
+    }
+    .tb-progress-step span:last-child {
+        font-size: .68rem;
+    }
+    .tb-step-circle {
+        width: 28px;
+        height: 28px;
+        font-size: .82rem;
+    }
+    .tb-step-actions {
+        flex-direction: column-reverse;
+        gap: 12px;
+        align-items: stretch;
+    }
+    .tb-step-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .tb-resumo-grid {
+        grid-template-columns: 1fr;
+    }
+    .tb-total-box {
+        padding: 20px 20px;
+    }
+    .tb-total-final strong {
+        font-size: 1.3rem;
+    }
+    .tb-result-actions {
+        flex-direction: column;
+    }
+    .tb-result-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .tb-memoria-formula {
+        font-size: .78rem;
+        word-break: break-word;
+    }
+}
+
+
+/* Acessibilidade: respeita preferência por menos movimento */
+
+@media (prefers-reduced-motion:reduce) {
+    .tb-progress-step,
+    .btn-dark,
+    .btn-outline-dark {
+        transition: none !important;
+    }
+}

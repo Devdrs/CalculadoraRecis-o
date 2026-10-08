@@ -1,0 +1,318 @@
+/* ============================================================
+   CALCULADORA TRABALHISTA — CSS/STYLE.CSS
+   Camada base: tokens e layout geral.
+   Reaproveita as variáveis já definidas no style.css do site
+   (--navy-900, --gold, --font-display etc. vêm de lá, carregado
+   antes deste arquivo no <head>). Aqui só acrescentamos tokens
+   próprios desta ferramenta e o layout das seções.
+
+   IDENTIDADE PEDIDA (ver documentação, seção 16):
+   cinza / branco / tons escuros neutros, detalhes discretos,
+   SEM verde como cor principal. Por isso o corpo da calculadora
+   é mais sóbrio/neutro que a home (menos "hero" colorido, mais
+   cartões em cinza/branco com acentos pontuais em dourado).
+   ============================================================ */
+
+:root {
+    --tb-cinza-50: #F6F7F8;
+    --tb-cinza-100: #ECEEF0;
+    --tb-cinza-200: #DADFE3;
+    --tb-cinza-400: #9AA3AC;
+    --tb-cinza-700: #4B535B;
+    --tb-escuro: #20262C;
+    /* neutro escuro — não é o navy da marca, é cinza-chumbo */
+    --tb-branco: #FFFFFF;
+    --tb-alerta-bg: #FBF3E9;
+    --tb-alerta-borda: #D9A441;
+    --tb-erro: #B3261E;
+}
+
+
+/* ============================================================
+   CABEÇALHO DA FERRAMENTA
+   ============================================================ */
+
+.tb-hero {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 36px 24px 10px;
+    text-align: left;
+}
+
+.tb-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+    color: var(--tb-escuro);
+    margin: .1em 0 .3em;
+}
+
+.tb-hero-sub {
+    color: var(--tb-cinza-700);
+    font-size: 1.02rem;
+    max-width: 620px;
+}
+
+
+/* ============================================================
+   CONTAINER DA APLICAÇÃO
+   ============================================================ */
+
+.tb-app {
+    background: var(--tb-cinza-50);
+    padding: 30px 24px 90px;
+}
+
+.tb-shell {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+
+/* ---------- Progresso ---------- */
+
+.tb-progress {
+    display: flex;
+    justify-content: space-between;
+    max-width: 620px;
+    margin: 0 auto 32px;
+    list-style: none;
+    padding: 0;
+}
+
+.tb-progress-step {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-ui);
+    font-size: .8rem;
+    color: var(--tb-cinza-400);
+}
+
+.tb-step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--tb-branco);
+    border: 2px solid var(--tb-cinza-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--tb-cinza-400);
+}
+
+.tb-progress-step.is-active .tb-step-circle {
+    background: var(--tb-escuro);
+    border-color: var(--tb-escuro);
+    color: var(--tb-branco);
+}
+
+.tb-progress-step.is-active {
+    color: var(--tb-escuro);
+    font-weight: 600;
+}
+
+.tb-progress-step.is-done .tb-step-circle {
+    background: var(--gold, #B8935B);
+    border-color: var(--gold, #B8935B);
+    color: var(--tb-escuro);
+}
+
+
+/* ---------- Cartão principal ---------- */
+
+.tb-card {
+    background: var(--tb-branco);
+    border: 1px solid var(--tb-cinza-100);
+    border-radius: 12px;
+    box-shadow: 0 10px 28px rgba(32, 38, 44, .08);
+    padding: 38px;
+}
+
+.tb-step {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.tb-step.is-active {
+    display: block;
+}
+
+.tb-step legend {
+    width: 100%;
+    margin-bottom: 1.4em;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--tb-escuro);
+}
+
+.tb-step legend .eyebrow {
+    display: block;
+    color: var(--gold, #B8935B);
+    margin-bottom: .3em;
+}
+
+.tb-step-note {
+    color: var(--tb-cinza-700);
+    font-size: .9rem;
+    margin-bottom: 1.6em;
+}
+
+.tb-row {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tb-row.cols-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.tb-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tb-field label {
+    font-family: var(--font-ui);
+    font-weight: 600;
+    font-size: .86rem;
+    color: var(--tb-escuro);
+}
+
+.tb-field input[type="text"],
+.tb-field input[type="date"],
+.tb-field input[type="number"],
+.tb-field select {
+    font-family: var(--font-body);
+    font-size: .95rem;
+    padding: 12px 14px;
+    border: 1.5px solid var(--tb-cinza-200);
+    border-radius: 8px;
+    background: var(--tb-branco);
+    color: var(--tb-escuro);
+    transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.tb-field input:focus,
+.tb-field select:focus {
+    outline: none;
+    border-color: var(--gold, #B8935B);
+    box-shadow: 0 0 0 3px rgba(184, 147, 91, .15);
+}
+
+.tb-field input.is-invalid,
+.tb-field select.is-invalid {
+    border-color: var(--tb-erro);
+}
+
+.tb-currency {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tb-currency span {
+    position: absolute;
+    left: 14px;
+    font-weight: 600;
+    color: var(--tb-cinza-700);
+    font-family: var(--font-ui);
+}
+
+.tb-currency input {
+    padding-left: 38px !important;
+    width: 100%;
+}
+
+.tb-hint {
+    font-size: .8rem;
+    color: var(--tb-cinza-700);
+    margin: 2px 0 0;
+}
+
+.tb-error {
+    font-size: .8rem;
+    color: var(--tb-erro);
+    margin: 2px 0 0;
+    min-height: 1em;
+    font-family: var(--font-ui);
+}
+
+.tb-checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: .9rem;
+    color: var(--tb-cinza-700);
+    cursor: pointer;
+}
+
+.tb-checkbox-row input {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--gold, #B8935B);
+}
+
+.tb-dynamic {
+    display: none;
+    margin-bottom: 20px;
+}
+
+.tb-dynamic.is-visible {
+    display: flex;
+}
+
+.tb-dynamic-group {
+    display: none;
+    border: 1px dashed var(--tb-cinza-200);
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    background: var(--tb-cinza-50);
+}
+
+.tb-dynamic-group.is-visible {
+    display: block;
+}
+
+.tb-step-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--tb-cinza-100);
+}
+
+
+/* Botões próprios (neutros) — complementam os .btn-gold/.btn-outline já existentes no site */
+
+.btn-dark {
+    background: var(--tb-escuro);
+    color: var(--tb-branco);
+}
+
+.btn-dark:hover {
+    background: #2E353C;
+    transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+    border: 2px solid var(--tb-cinza-200);
+    color: var(--tb-escuro);
+    background: transparent;
+}
+
+.btn-outline-dark:hover {
+    border-color: var(--tb-escuro);
+    transform: translateY(-2px);
+}
